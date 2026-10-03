@@ -1,114 +1,114 @@
-# Arbitrum Web3 Learning Map
+# نقشه یادگیری وب۳ آربیتروم (Arbitrum Web3 Learning Map)
 
-> **From Zero to Onchain**  
-> An interactive onchain learning journey built for the **Arbitrum Buidathon 2026**.
-
----
-
-## 🌟 Overview
-
-**Arbitrum Web3 Learning Map** is a gamified, interactive educational platform that guides complete beginners from having zero Web3 knowledge to confidently executing verified onchain actions on Arbitrum Sepolia.
-
-Instead of passive video lectures or generic documentation, learners progress through an interconnected world map of learning nodes following the core product loop:
-
-$$\text{Learn} \longrightarrow \text{Practice} \longrightarrow \text{Perform} \longrightarrow \text{Verify} \longrightarrow \text{Earn XP} \longrightarrow \text{Unlock}$$
-
-The curriculum progresses systematically through:
-1. **The Sandbox (Zone 0)**: 100% zero-risk local simulation of cryptographic keypairs, message signing, and transactions.
-2. **Arbitrum Sepolia Testnet (Zones 1-4)**: Real non-custodial wallet connection, gas mechanics, token claims, DEX swaps, liquidity provision, staking, and NFT minting.
-3. **Security Lab (Zone 5)**: Hands-on defense against phishing, malicious approvals, and seed phrase compromise.
-4. **Mainnet Readiness (Zone 7)**: Verified checklist and conscious graduation to Arbitrum One.
+> **از صفر تا آن‌چین**  
+> یک سفر آموزشی تعاملی و عملی روی بلاک‌چین، طراحی‌شده برای **Arbitrum Buidathon 2026**.
 
 ---
 
-## 🛠️ Architecture
+## 🌟 نمای کلی
+
+**نقشه یادگیری وب۳ آربیتروم** یک پلتفرم آموزشی گیمیفای‌شده و تعاملی است که کاربران را از نقطه صفر مطلق و بدون نیاز به دانش قبلی در حوزه وب۳، تا اجرای بااطمینان و تاییدشده تراکنش‌های آن‌چین روی شبکه تستی **Arbitrum Sepolia** هدایت می‌کند.
+
+به جای تماشای منفعلانه ویدیوها یا خواندن مستندات خشک متنی، کاربران در قالب یک نقشه جهان به‌هم‌پیوسته از گره‌های یادگیری، حلقه اصلی محصول را گام‌به‌گام طی می‌کنند:
+
+$$\text{یادگیری} \longrightarrow \text{تمرین} \longrightarrow \text{اجرا} \longrightarrow \text{راستی‌آزمایی} \longrightarrow \text{کسب امتیاز XP} \longrightarrow \text{باز شدن مرحله بعد}$$
+
+برنامه درسی به صورت منظم از بخش‌های زیر عبور می‌کند:
+1. **محیط آزمایشی (منطقه ۰)**: شبیه‌سازی ۱۰۰٪ محلی و بدون کوچک‌ترین ریسک مالی از جفت‌کلیدهای رمزنگاری، امضای پیام‌ها و تراکنش‌ها.
+2. **شبکه آزمایشی Arbitrum Sepolia (مناطق ۱ تا ۴)**: اتصال واقعی و غیرحضانتی کیف‌پول، درک سازوکار گس و نیترو، دریافت توکن‌های آموزشی، مبادله در DEX، تامین نقدینگی، استیکینگ و ضرب نشان‌های NFT.
+3. **آزمایشگاه امنیت (منطقه ۵)**: دفاع تجربی در برابر حملات فیشینگ، تحلیل ریسک مجوزهای نامحدود و اصول بهداشت کلمات بازیابی (Seed Phrase).
+4. **آمادگی برای ورود به مین‌نت (منطقه ۷)**: چک‌لیست تاییدشده و فارغ‌التحصیلی آگاهانه برای ورود به شبکه اصلی Arbitrum One.
+
+---
+
+## 🛠️ معماری فنی
 
 ```text
 React (ESM + JSX) + Vite + Tailwind CSS
                   ↓
           Wagmi v2 + Viem
                   ↓
-    Non-Custodial External Wallet (MetaMask / EIP-1193)
+  کیف‌پول خارجی غیرحضانتی (MetaMask / EIP-1193)
                   ↓
        Arbitrum Sepolia (Nitro L2)
                   ↓
-      Educational Smart Contracts
-  ├── LearnToken.sol (ERC-20)
-  ├── LearnUSD.sol (ERC-20 Stablecoin)
-  ├── SimpleAMM.sol (Constant Product x*y=k)
-  ├── StakingLab.sol (Yield & Lock Timers)
-  ├── AchievementNFT.sol (ERC-721 SVG Badge)
-  └── SimpleMarketplace.sol (Escrow & Atomic Trades)
+       قراردادهای هوشمند آموزشی
+   ├── LearnToken.sol (ERC-20)
+   ├── LearnUSD.sol (استیبل‌کوین آموزشی ERC-20)
+   ├── SimpleAMM.sol (صرافی با فرمول حاصل‌ضرب ثابت x*y=k)
+   ├── StakingLab.sol (صندوق استیکینگ با تایمر قفل)
+   ├── AchievementNFT.sol (نشان دستاورد ERC-721 با گرافیک SVG)
+   └── SimpleMarketplace.sol (قرارداد امانی و مبادله اتمی)
 ```
 
-- **Pure Frontend Architecture**: No backend server, no custodial wallet, no cloud databases.
-- **Client Persistence**: Versioned `localStorage` handles XP, stage completion, and transaction history.
-- **Onchain Verification**: Blockchain state is read directly from Arbitrum Sepolia via Wagmi/Viem and verified on Arbiscan.
+- **معماری فرانت‌اند خالص**: بدون نیاز به سرور متمرکز، بدون کیف‌پول حضانتی و بدون دیتابیس‌های کلاد.
+- **ماندگاری داده‌ها در مرورگر کاربر**: ذخیره‌سازی نسخه‌بندی‌شده در `localStorage` برای مدیریت امتیازهای XP، مراحل تکمیل‌شده و تاریخچه تراکنش‌ها.
+- **راستی‌آزمایی آن‌چین**: وضعیت بلاک‌چین مستقیماً از طریق Wagmi و Viem از رول‌آپ Arbitrum Sepolia خوانده شده و در کاوشگر Arbiscan قابل پیگیری است.
 
 ---
 
-## 📜 Smart Contracts
+## 📜 قراردادهای هوشمند
 
-All smart contracts are located in `/contracts` and built using OpenZeppelin standards:
+تمامی قراردادهای هوشمند در مسیر `/contracts` قرار داشته و با استانداردهای رسمی OpenZeppelin پیاده‌سازی شده‌اند:
 
-| Contract | Standard / Type | Description |
+| قرارداد | استاندارد / نوع | توضیحات |
 | :--- | :--- | :--- |
-| **`LearnToken.sol`** | ERC-20 (`LEARN`) | Educational testnet token. Includes 1-time `claimFaucet()` of 1,000 LEARN per address. |
-| **`LearnUSD.sol`** | ERC-20 (`LUSD`) | Educational simulated USD token for DEX swaps and NFT purchases. |
-| **`SimpleAMM.sol`** | Constant-Product DEX ($x \cdot y = k$) | Demonstrates automated market making, reserves, LP minting, 0.3% fees, and slippage protection. |
-| **`StakingLab.sol`** | DeFi Staking Vault | Demonstrates time-locked token staking (60s demo lock), educational reward distribution, and reentrancy protection. |
-| **`AchievementNFT.sol`** | ERC-721 Badge (`AW3F`) | Mints the verified "Arbitrum Web3 Foundations" badge with onchain vector SVG artwork. 1 per address. |
-| **`SimpleMarketplace.sol`** | NFT Escrow Market | Facilitates fixed-price listing and atomic purchase of Achievement NFTs using LearnUSD. |
+| **`LearnToken.sol`** | ERC-20 (`LEARN`) | توکن آموزشی شبکه تستی با امکان دریافت یک‌باره سهمیه ۱,۰۰۰ توکن از طریق تابع `claimFaucet()` به ازای هر آدرس. |
+| **`LearnUSD.sol`** | ERC-20 (`LUSD`) | استیبل‌کوین دلاری شبیه‌سازی‌شده برای مبادلات صرافی غیرمتمرکز و خرید NFT در بازارچه. |
+| **`SimpleAMM.sol`** | صرافی خودکار ($x \cdot y = k$) | نمایش نحوه کارکرد بازارساز خودکار، مدیریت ذخایر، ضرب سهام نقدینگی (LP)، کارمزد ۰.۳٪ و محافظت در برابر لغزش قیمت (Slippage). |
+| **`StakingLab.sol`** | صندوق استیکینگ دیفای | نمایش قفل زمانی دارایی‌ها (تایمر ۶۰ ثانیه‌ای دمو)، توزیع الگوریتمی پاداش‌های آموزشی و محافظت در برابر حملات Reentrancy. |
+| **`AchievementNFT.sol`** | نشان ERC-721 (`AW3F`) | ضرب نشان تاییدشده «پایه‌های وب۳ آربیتروم» همراه با اثر هنری برداری SVG به صورت کاملاً آن‌چین (یک نشان برای هر آدرس). |
+| **`SimpleMarketplace.sol`** | بازارچه امانی NFT | تسهیل ثبت سفارش فروش با قیمت مقطوع و خرید اتمی نشان‌های دستاورد با استفاده از توکن LearnUSD. |
 
 ---
 
-## 🗺️ Curriculum Map & Zones
+## 🗺️ نقشه برنامه درسی و مناطق
 
-- **Zone 0: The Sandbox** (Stage 00: Web3 Wallet Basics - Simulated keypairs & signatures)
-- **Zone 1: Arbitrum Foundations** (Stage 01: Connect Wallet, Stage 02: Network & Nitro Architecture, Stage 03: Gas & Nitro Efficiency, Stage 04: First Onchain Transaction)
-- **Zone 2: Token Lab** (Stage 05: ERC-20 Fungible Tokens, Stage 06: Token Transfers & State, Stage 07: Approval & Allowance Lifecycle)
-- **Zone 3: DeFi Lab** (Stage 08: Decentralized Exchange & AMM, Stage 09: Liquidity Provision, Stage 10: Staking & Yield Mechanics)
-- **Zone 4: Digital Ownership** (Stage 11: NFTs & Provable Ownership, Stage 12: NFT Marketplace & Escrow)
-- **Zone 5: Security Lab** (Stage 13: Security Mastery: Phishing Detector, Approval Risk Analyzer, Seed Hygiene)
-- **Zone 6: Advanced Web3 (Preview)** (Stage 14: Lending & Money Markets, Stage 15: Nitro Bridge & Outbox)
-- **Zone 7: Mainnet Graduation** (Stage ★: Mainnet Readiness Checklist & Arbitrum One Transition)
+- **منطقه ۰: محیط آزمایشی** (مرحله ۰۰: مبانی کیف‌پول وب۳ — جفت‌کلیدها و امضاهای شبیه‌سازی‌شده)
+- **منطقه ۱: پایه‌های آربیتروم** (مرحله ۰۱: اتصال کیف‌پول، مرحله ۰۲: معماری شبکه و نیترو، مرحله ۰۳: کارمزد گس و بهره‌وری نیترو، مرحله ۰۴: نخستین تراکنش آن‌چین)
+- **منطقه ۲: آزمایشگاه توکن‌ها** (مرحله ۰۵: توکن‌های مثلی ERC-20، مرحله ۰۶: انتقال توکن و وضعیت، مرحله ۰۷: چرخه تایید و سقف برداشت Allowance)
+- **منطقه ۳: آزمایشگاه دیفای** (مرحله ۰۸: صرافی غیرمتمرکز و مبادله AMM، مرحله ۰۹: تامین نقدینگی، مرحله ۱۰: استیکینگ و مکانیسم‌های سودآوری)
+- **منطقه ۴: مالکیت دیجیتال** (مرحله ۱۱: توکن‌های NFT و اثبات مالکیت، مرحله ۱۲: بازارچه و قرارداد امانی NFT)
+- **منطقه ۵: آزمایشگاه امنیت** (مرحله ۱۳: تسلط بر امنیت: آشکارساز فیشینگ، تحلیلگر ریسک مجوزها، بهداشت کلمات بازیابی)
+- **منطقه ۶: وب۳ پیشرفته (پیش‌نمایش)** (مرحله ۱۴: بازارهای وام‌دهی و نقدینگی، مرحله ۱۵: پل ارتباطی نیترو و Outbox)
+- **منطقه ۷: فارغ‌التحصیلی و مین‌نت** (مرحله ★: چک‌لیست آمادگی ورود به شبکه اصلی و مهاجرت به Arbitrum One)
 
 ---
 
-## 🚀 Setup & Execution
+## 🚀 راه‌اندازی و اجرا
 
-### 1. Install Dependencies
+### ۱. نصب وابستگی‌ها
 ```bash
 npm install
 ```
 
-### 2. Configure Environment
-Copy `.env.example` to `.env`:
+### ۲. تنظیم متغیرهای محیطی
+کپی فایل `.env.example` به `.env`:
 ```bash
 cp .env.example .env
 ```
 
-### 3. Run Development Server
+### ۳. اجرای سرور توسعه
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+سپس آدرس [http://localhost:3000](http://localhost:3000) را در مرورگر باز کنید.
 
-### 4. Run Contract Tests
+### ۴. اجرای تست‌های قراردادهای هوشمند
 ```bash
 npm test
 ```
 
-### 5. Build for Production
+### ۵. بیلد نهایی پروژه
 ```bash
 npm run build
 ```
 
 ---
 
-## 🔒 Security & Disclaimers
+## 🔒 امنیت و سلب مسئولیت
 
-1. **Test Tokens Have Zero Value**: LearnToken (LEARN) and LearnUSD (LUSD) are educational testnet tokens with no financial value.
-2. **Non-Custodial**: This application never generates, requests, or stores private keys or seed phrases.
-3. **Educational MVP**: Contracts are built for hackathon demonstration and educational practice; they are not audited for real-money production use.
-4. **Mainnet Transition**: Mainnet is presented solely as a graduation readiness checklist; no real-money transactions are requested or incentivized.
+۱. **فاقد ارزش مالی بودن توکن‌های تستی**: توکن‌های LearnToken (LEARN) و LearnUSD (LUSD) صرفاً دارایی‌های آموزشی شبکه تستی هستند و هیچ ارزش مادی ندارند.  
+۲. **طراحی غیرحضانتی**: این برنامه تحت هیچ شرایطی کلید خصوصی یا عبارت بازیابی (Seed Phrase) تولید نکرده، درخواست نمی‌کند و ذخیره نمی‌سازد.  
+۳. **نسخه آموزشی هکاتون**: تمامی قراردادها برای ارائه در هکاتون و تمرین آموزشی توسعه یافته‌اند و برای استفاده مالی واقعی حسابرسی (Audit) نشده‌اند.  
+۴. **انتقال به مین‌نت**: بخش شبکه اصلی صرفاً در قالب یک چک‌لیست ارزیابی آمادگی فارغ‌التحصیلی ارائه شده است و هیچ تراکنش مالی واقعی الزامی نبوده و تشویق نمی‌شود.
