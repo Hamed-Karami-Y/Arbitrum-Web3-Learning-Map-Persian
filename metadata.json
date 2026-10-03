@@ -1,0 +1,8 @@
+{
+  "name": "Remix Arbitrum Web3 Learning Map",
+  "description": "نقشه راه تعاملی و عملی یادگیری وب۳ و آربیتروم — از صفر مطلق و محیط آزمایشی تا تسلط بر آربیتروم سپولیا و آمادگی برای مین‌نت.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
